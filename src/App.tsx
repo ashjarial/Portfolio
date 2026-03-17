@@ -205,13 +205,13 @@ export default function App() {
 
         {/* About */}
 
-    <section id="about" style={{ padding: '5rem 0 3rem', textAlign: 'center' }}>
-      <SectionLabel>About</SectionLabel>
-      <h2 style={h2Style}>Who I Am</h2>
-      <p style={{ color: '#475569', lineHeight: 1.8, fontSize: '1.05rem', marginTop: '1rem', maxWidth: '700px', margin: '1rem auto 0' }}>
-        I'm a Software Engineer specializing in backend development with <strong style={{ color: '#0f172a' }}>C#, Python, .NET Core, and Azure</strong>. I build scalable APIs and cloud-native applications, and bring hands-on experience with AI technologies including <strong style={{ color: '#0f172a' }}>LLMs, RAG pipelines, and vector databases</strong>.
-      </p>
-    </section>
+<section id="about" style={{ padding: '5rem 0 3rem', textAlign: 'center', width: '100%', boxSizing: 'border-box', overflow: 'hidden' }}>
+  <SectionLabel>About</SectionLabel>
+  <h2 style={h2Style}>Who I Am</h2>
+  <p style={{ color: '#475569', lineHeight: 1.8, fontSize: '1.05rem', maxWidth: '700px', margin: '1rem auto 0', overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal', padding: '0 1rem' }}>
+    I'm a Software Engineer specializing in backend development with <strong style={{ color: '#0f172a' }}>C#, Python, .NET Core, and Azure</strong>. I build scalable APIs and cloud-native applications, and bring hands-on experience with AI technologies including <strong style={{ color: '#0f172a' }}>LLMs, RAG pipelines, and vector databases</strong>.
+  </p>
+</section>
        
 
         {/* Skills */}
