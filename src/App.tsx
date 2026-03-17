@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import profileImg from './assets/profile.png'
-import Resume from './assets/AshishKumarResume.pdf'
 
 import './App.css'
 
@@ -153,10 +152,6 @@ export default function App() {
               }}>{link}</a>
             ))}
           </div>
-          <a href={Resume} target="_blank" rel="noopener noreferrer" className="btn-primary"
-            style={{ padding: '0.45rem 1.1rem', background: '#6366f1', color: '#fff', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600, transition: 'all 0.2s' }}>
-            Resume ↗
-          </a>
         </div>
       </nav>
 
@@ -186,35 +181,21 @@ export default function App() {
             <AnimatedH1>Ashish Kumar</AnimatedH1>
             <FadeIn delay={250}>
               <p style={{ fontSize: '1.1rem', color: '#475569', marginTop: '0.75rem', fontWeight: 400, lineHeight: 1.6 }}>
-                Software Engineer &nbsp;·&nbsp; .NET &nbsp;·&nbsp; Azure &nbsp;·&nbsp; AI & LLM Applications
+                Python &nbsp;·&nbsp; .NET &nbsp;·&nbsp; Azure &nbsp;·&nbsp; AI & LLM Applications &nbsp;·&nbsp; Data Structure
               </p>
-              <p style={{ fontSize: '0.95rem', color: '#64748b', marginTop: '1rem', lineHeight: 1.7,  whiteSpace: 'nowrap' }}>
+              <p style={{ fontSize: '0.95rem', color: '#64748b', marginTop: '1rem', lineHeight: 1.7,  whiteSpace: 'normal' }}>
                 Building scalable cloud-native backends and intelligent AI systems at <strong style={{ color: '#0f172a' }}>Deloitte</strong>.
               </p>
             </FadeIn>
             <FadeIn delay={400}>
-              <div className="hero-btns" style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem', flexWrap: 'wrap' }}>
-                <a href="#projects" className="btn-primary"
-                  style={{ padding: '0.7rem 1.6rem', background: '#6366f1', color: '#fff', borderRadius: '8px', fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.2s' }}>
-                  View Projects →
-                </a>
-                <a href="/AshishKumarResume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline"
-                  style={{ padding: '0.7rem 1.6rem', border: '1.5px solid #cbd5e1', borderRadius: '8px', fontWeight: 600, fontSize: '0.9rem', color: '#334155', transition: 'all 0.2s' }}>
-                  Download Resume
-                </a>
-              </div>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '1.5rem' }}>
-                {[
-                  { label: 'GitHub', href: 'https://github.com/ashjarial' },
-                  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ashish-kumar-933661212/' },
-                  { label: 'LeetCode', href: 'https://leetcode.com/u/Ashish_kumar_dhiman2172001/' },
-                ].map(s => (
-                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="contact-link"
-                    style={{ fontSize: '0.85rem', fontWeight: 500, color: '#64748b', borderBottom: '1px dashed #cbd5e1', paddingBottom: '1px', transition: 'color 0.2s' }}>
-                    {s.label} ↗
-                  </a>
-                ))}
-              </div>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
+              <button style={{ backgroundColor: '#6366f1', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', border: 'none', fontWeight: 600, fontSize: '1rem', cursor: 'pointer' }}>
+                View Projects →
+              </button>
+              <button style={{ backgroundColor: 'transparent', color: '#0f172a', padding: '0.75rem 1.5rem', borderRadius: '8px', border: '1.5px solid #0f172a', fontWeight: 600, fontSize: '1rem', cursor: 'pointer' }}>
+                Download Resume
+              </button>
+            </div>
             </FadeIn>
           </div>
         </div>
@@ -228,7 +209,7 @@ export default function App() {
       <SectionLabel>About</SectionLabel>
       <h2 style={h2Style}>Who I Am</h2>
       <p style={{ color: '#475569', lineHeight: 1.8, fontSize: '1.05rem', marginTop: '1rem', maxWidth: '700px', margin: '1rem auto 0' }}>
-        I'm a Software Engineer specializing in backend development with <strong style={{ color: '#0f172a' }}>C#, .NET Core, and Azure</strong>. I build scalable APIs and cloud-native applications, and bring hands-on experience with AI technologies including <strong style={{ color: '#0f172a' }}>LLMs, RAG pipelines, and vector databases</strong>.
+        I'm a Software Engineer specializing in backend development with <strong style={{ color: '#0f172a' }}>C#, Python, .NET Core, and Azure</strong>. I build scalable APIs and cloud-native applications, and bring hands-on experience with AI technologies including <strong style={{ color: '#0f172a' }}>LLMs, RAG pipelines, and vector databases</strong>.
       </p>
     </section>
        
@@ -265,7 +246,7 @@ export default function App() {
               badge="Current"
               bullets={[
                 "Built an OCR pipeline using Azure Document Intelligence to extract structured data from documents and tables, improving automation accuracy.",
-                "Integrated extracted content into LLM-driven QA workflows, boosting response accuracy and consistency.",
+                "Integrated extracted content into LLM-driven  workflows, boosting response accuracy and consistency.",
                 "Designed intelligent query-routing workflows using Azure OpenAI, Logic Apps, and Azure Functions.",
                 "Improved system quality using prompt evaluation strategies and iterative optimization.",
               ]}
@@ -297,7 +278,7 @@ export default function App() {
             {[
               { title: 'RAG FitBot', tag: 'AI / RAG', desc: 'AI-powered document assistant that extracts insights from documents using RAG architecture.', color: '#dcfce7', dot: '#16a34a' },
               { title: 'Meeting Bot', tag: 'Automation', desc: 'Automation bot that joins Zoom, Google Meet and Teams meetings automatically.', color: '#dbeafe', dot: '#2563eb' },
-              { title: 'OCR + LLM QA', tag: 'Azure / LLM', desc: 'Extracts structured data from documents and allows intelligent question answering.', color: '#ede9fe', dot: '#7c3aed' },
+              { title: 'OCR + LLM ', tag: 'Azure / LLM', desc: 'Extracts structured data from documents and allows intelligent question answering.', color: '#ede9fe', dot: '#7c3aed' },
             ].map(p => (
               <div key={p.title} className="card" style={{
                 padding: '1.5rem', border: '1px solid #e2e8f0', borderRadius: '14px',
@@ -321,8 +302,8 @@ export default function App() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1.5rem' }}>
             {[
               { school: 'National Institute of Technology, Hamirpur', degree: 'B.Tech', period: 'Jun 2019 – Aug 2023', grade: 'CGPA: 8.57', highlight: true },
-              { school: 'Govt. Senior Secondary School, Kotla Behr', degree: 'Class XII', period: 'Mar 2018 – Mar 2019', grade: '90.2%', highlight: false },
-              { school: 'Vasishat Bharti Public High School, Sansarpur Terrace', degree: 'Class X', period: 'Mar 2016 – Mar 2017', grade: '94.57%', highlight: false },
+              { school: 'Govt. Senior Secondary School, Kotla Behr(H.P)', degree: 'Class XII', period: 'Mar 2018 – Mar 2019', grade: '90.2%', highlight: false },
+              { school: 'Vasishat Bharti Public High School, Sansarpur Terrace(H.P)', degree: 'Class X', period: 'Mar 2016 – Mar 2017', grade: '94.57%', highlight: false },
             ].map(ed => (
               <div key={ed.school} className="card" style={{
                 padding: '1.25rem 1.5rem', border: '1px solid #e2e8f0', borderRadius: '12px',
@@ -399,7 +380,7 @@ export default function App() {
       </div>
 
       <footer style={{ borderTop: '1px solid #e2e8f0', padding: '1.5rem 2rem', textAlign: 'center', color: '#94a3b8', fontSize: '0.82rem' }}>
-        © 2026 Ashish Kumar &nbsp;·&nbsp; Built with React & Vite
+        © 2026 Ashish Kumar &nbsp;·&nbsp;
       </footer>
     </>
   )
