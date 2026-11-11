@@ -142,3 +142,67 @@
   .cw-fab { right: 16px; bottom: 16px; }
   .cw-panel, .cw-nudge { right: 16px; bottom: 84px; }
 }
+.cw-panel .cw-gate {
+  flex: 1; display: flex; flex-direction: column; align-items: stretch;
+  justify-content: center; gap: 14px;
+  padding: 28px 26px; text-align: center;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 255, 58, 0.12), transparent 60%);
+}
+
+.cw-panel .cw-gate-icon {
+  width: 64px; height: 64px; margin: 0 auto 2px;
+  display: grid; place-items: center; font-size: 30px;
+  border-radius: 50%;
+  background: rgba(212, 255, 58, 0.14);
+  border: 1px solid rgba(212, 255, 58, 0.45);
+  animation: cwWave 2s ease 0.3s 2;
+}
+
+.cw-panel .cw-gate h4 {
+  margin: 0; font-size: 1.15rem; line-height: 1.3; color: inherit;
+}
+.cw-panel .cw-gate p {
+  margin: 0 0 6px; font-size: 0.88rem; line-height: 1.5; opacity: 0.7;
+}
+
+.cw-panel .cw-field {
+  display: flex; flex-direction: column; gap: 6px; text-align: left;
+}
+.cw-panel .cw-field span {
+  font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6;
+}
+.cw-panel .cw-field input {
+  width: 100%; box-sizing: border-box; margin: 0;
+  padding: 13px 16px; border-radius: 12px;
+  font: inherit; font-size: 1rem; color: inherit; text-align: left; outline: none;
+  background: rgba(128, 128, 128, 0.12);
+  border: 1px solid var(--cw-line);
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.cw-panel .cw-field input::placeholder { color: inherit; opacity: 0.4; }
+.cw-panel .cw-field input:focus {
+  border-color: var(--cw-accent);
+  box-shadow: 0 0 0 3px rgba(212, 255, 58, 0.18);
+  background: rgba(128, 128, 128, 0.16);
+}
+
+.cw-panel .cw-go {
+  width: 100%; box-sizing: border-box; margin: 0;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 16px; border-radius: 12px; border: 0; cursor: pointer;
+  font: inherit; font-size: 0.98rem; font-weight: 700;
+  background: var(--cw-accent); color: var(--cw-accent-ink);
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+}
+.cw-panel .cw-go:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(212, 255, 58, 0.28);
+}
+.cw-panel .cw-go span { transition: transform 0.15s; }
+.cw-panel .cw-go:hover:not(:disabled) span { transform: translateX(4px); }
+.cw-panel .cw-go:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.cw-panel .cw-note {
+  font-size: 0.72rem; line-height: 1.45; opacity: 0.5; text-align: center;
+}
