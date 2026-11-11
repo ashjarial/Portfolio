@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties, type MouseEve
 import profileImg from './assets/profile.png'
 import resumeUrl from './assets/AshishKumarResume.pdf'
 import './App.css'
-import ChatWidget from './ChatWidget'
+import ChatWidget, { type ChatTrigger } from './ChatWidget'
 
 type Project = {
   title: string
@@ -187,6 +187,8 @@ function App() {
   const [active, setActive] = useState('')
   const [filter, setFilter] = useState<(typeof categories)[number]>('All')
   const [copied, setCopied] = useState(false)
+  const [chat, setChat] = useState<ChatTrigger>(null)
+  const askBot = (prompt: string) => setChat({ id: Date.now(), prompt })
 
   useEffect(() => {
     const root = document.documentElement
@@ -231,6 +233,9 @@ function App() {
         <button className="ib" onClick={() => setDark((v) => !v)} aria-label="Toggle theme">{dark ? '☀' : '☾'}</button>
         <a className="btn p sm resume" href={resumeUrl} download="AshishKumar_Resume.pdf">Resume ↓</a>
         <button className="ib menu" onClick={() => setMenuOpen((v) => !v)} aria-label="Menu" aria-expanded={menuOpen}>{menuOpen ? '✕' : '☰'}</button>
+        <button className="btn g" onClick={() => askBot('Give me a quick overview of Ashish and his best work.')}>
+          Ask my AI ✦
+        </button>
       </header>
       <nav className={`sheet ${menuOpen ? 'open' : ''}`}>
         {navItems.map((i) => <a key={i} href={`#${i.toLowerCase()}`} onClick={close}>{i}</a>)}
@@ -310,6 +315,12 @@ function App() {
                     <h3>{job.role}</h3>
                     <div className="co">{job.company} <span>· {job.location}</span></div>
                     <ul>{job.points.map((p) => <li key={p}>{p}</li>)}</ul>
+                    <button
+                    className="ask-ai"
+                    onClick={() => askBot(`What did Ashish work on as ${job.role} at ${job.company}? Which projects and technologies?`)}
+                  >
+                    ✦ Ask AI about this role
+                  </button>
                   </article>
                 </Reveal>
               ))}
@@ -335,7 +346,13 @@ function App() {
                   <h3>{p.title}</h3>
                   <p>{p.description}</p>
                   <div className="tags">{p.stack.map((t) => <span key={t}>{t}</span>)}</div>
-                </Tilt>
+                  <button
+                    className="ask-ai"
+                    onClick={() => askBot(`Tell me more about the project "${p.title}". What did Ashish build and which technologies did he use?`)}
+                  >
+                    ✦ Ask AI about this
+                  </button>
+                </Tilt>     
               ))}
             </div>
           </div>
@@ -383,9 +400,10 @@ function App() {
         </section>
       </main>
       <footer className="foot wrap"><span>© 2026 Ashish Kumar</span><a href="#home">Back to top ↑</a></footer>
-      <ChatWidget />
+      <ChatWidget trigger={chat} />
     </div>
   )
 }
+
 
 export default App

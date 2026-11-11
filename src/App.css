@@ -162,3 +162,10 @@ font:400 1rem/1.6 'Bricolage Grotesque',sans-serif;background:var(--bg);color:va
 .out .ch{-webkit-text-stroke-width:1.5px}.btn{padding:13px 20px}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.ask-ai {
+  margin-top: 14px; padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  font: inherit; font-size: 0.82rem; color: inherit;
+  background: transparent; border: 1px dashed rgba(128, 128, 128, 0.55);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.ask-ai:hover { background: rgba(124, 92, 255, 0.15); border-color: #7c5cff; transform: translateY(-2px); }
