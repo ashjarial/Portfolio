@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties, type MouseEve
 import profileImg from './assets/profile.png'
 import resumeUrl from './assets/AshishKumarResume.pdf'
 import './App.css'
+import ChatWidget from './ChatWidget'
 
 type Project = {
   title: string
@@ -382,6 +383,7 @@ function App() {
         </section>
       </main>
       <footer className="foot wrap"><span>© 2026 Ashish Kumar</span><a href="#home">Back to top ↑</a></footer>
+      <ChatWidget />
     </div>
   )
 }
